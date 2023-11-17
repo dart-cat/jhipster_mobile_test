@@ -1,0 +1,37 @@
+{
+  "angularJSSuffix": "",
+  "applications": ["library"],
+  "changelogDate": "20231117123201",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "purchase",
+  "fields": [
+    {
+      "fieldName": "cost",
+      "fieldType": "Long"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Purchase",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "book",
+      "otherEntityRelationshipName": "purchase",
+      "relationshipName": "book",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "customer",
+      "otherEntityRelationshipName": "purchase",
+      "relationshipName": "customer",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl",
+  "skipClient": false
+}

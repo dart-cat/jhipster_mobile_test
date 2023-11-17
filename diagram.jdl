@@ -1,0 +1,44 @@
+application {
+  config {
+    baseName library,
+    applicationType monolith,
+    packageName by.sqilsoft.sample.app,
+    authenticationType jwt,
+    databaseType sql,
+    devDatabaseType postgresql,
+    prodDatabaseType postgresql,
+    clientFramework angular,
+  }
+  entities *
+  dto * with mapstruct
+  service * with serviceImpl
+  paginate * with infinite-scroll
+}
+
+entity Author {
+	name String required,
+    birthday LocalDate required
+}
+
+entity Book {
+	name String required,
+    dateOfIssue LocalDate required
+}
+
+entity Customer {
+	name String required,
+    birthday LocalDate required
+}
+
+entity Purchase{
+	cost Long
+}
+
+relationship OneToMany {
+	Book to Purchase{Book(name)}
+    Customer to Purchase{Customer(name)}
+}
+
+relationship ManyToMany {
+	Book{Author(name)} to Author{Book(name)}
+}

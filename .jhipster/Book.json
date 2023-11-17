@@ -1,0 +1,43 @@
+{
+  "angularJSSuffix": "",
+  "applications": ["library"],
+  "changelogDate": "20231117123001",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "book",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dateOfIssue",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Book",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "purchase",
+      "otherEntityRelationshipName": "book",
+      "relationshipName": "purchase",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "author",
+      "otherEntityRelationshipName": "book",
+      "ownerSide": true,
+      "relationshipName": "author",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceImpl",
+  "skipClient": false
+}

@@ -1,0 +1,35 @@
+{
+  "angularJSSuffix": "",
+  "applications": ["library"],
+  "changelogDate": "20231117123101",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "customer",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "birthday",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Customer",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "purchase",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "purchase",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl",
+  "skipClient": false
+}
